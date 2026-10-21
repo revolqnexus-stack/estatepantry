@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+import { Suspense } from "react";
 import { Estate } from "@/components/sections/estate";
 import { Food } from "@/components/sections/food";
 import { Footer } from "@/components/sections/footer";
@@ -12,14 +13,12 @@ import { visitKey } from "@/lib/site";
 
 export const instant = false;
 
-export default async function Home() {
-  const jar = await cookies();
-  const seen = jar.get(visitKey)?.value === "1";
-
+export default function Home() {
   return (
     <main>
-      {seen ? null : <Loader />}
-      <Hero seen={seen} />
+      <Suspense fallback={<Hero seen />}>
+        <Opening />
+      </Suspense>
       <Marquee />
       <Story />
       <Food />
@@ -29,5 +28,17 @@ export default async function Home() {
       <Visit />
       <Footer />
     </main>
+  );
+}
+
+async function Opening() {
+  const jar = await cookies();
+  const seen = jar.get(visitKey)?.value === "1";
+
+  return (
+    <>
+      {seen ? null : <Loader />}
+      <Hero seen={seen} />
+    </>
   );
 }
