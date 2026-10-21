@@ -1,0 +1,17 @@
+---
+description: Animation rules for GSAP, ScrollTrigger, Lenis
+globs: ["**/*.tsx", "**/*.ts"]
+alwaysApply: false
+---
+
+- Animate only `transform` and `opacity`. Never width, height, top, left, margin, box-shadow.
+- Register plugins once in `/lib/gsap.ts`. Import gsap from there everywhere.
+- Use `useGSAP` with a scope ref. All triggers must clean up on unmount.
+- Lenis drives scroll: `lenis.on('scroll', ScrollTrigger.update)`, add lenis.raf to `gsap.ticker`, set `gsap.ticker.lagSmoothing(0)`.
+- Call `ScrollTrigger.refresh()` after fonts and images load.
+- Never call setState inside scroll or onUpdate handlers. Use refs and direct DOM or canvas writes.
+- Pinned sections: use `pin: true`, `scrub: 1` (or `true` for frame sequences), `anticipatePin: 1`.
+- Frame sequences: preload into `ImageBitmap`/`Image` array, draw to canvas with `requestAnimationFrame`, size canvas for devicePixelRatio capped at 2.
+- Wrap everything in `gsap.matchMedia()`. Under `(prefers-reduced-motion: reduce)` skip scrubbing, show static end states.
+- Easing: slow and soft (`power2.out`, `power3.inOut`). Durations 0.8-1.4s for reveals. This brand is slow living, nothing snappy or bouncy.
+- Add `will-change: transform` only on actively animating elements, remove after.

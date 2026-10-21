@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --mist: #dce5da;
+  --tea: #2f4a3a;
+  --cream: #f4ede1;
+  --ember: #d9622b;
+  --char: #1a1714;
+  --bark: #6b4a2f;
+}
+
+@theme inline {
+  --color-mist: var(--mist);
+  --color-tea: var(--tea);
+  --color-cream: var(--cream);
+  --color-ember: var(--ember);
+  --color-char: var(--char);
+  --color-bark: var(--bark);
+  --font-display: var(--font-fraunces), "Iowan Old Style", Palatino, serif;
+  --font-sans: var(--font-dm), "Avenir Next", "Segoe UI", sans-serif;
+}
+
+html {
+  background: var(--cream);
+  scroll-padding-top: 5rem;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  background: var(--cream);
+  color: var(--tea);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 30, "WONK" 0;
+}
+
+.glass-nav {
+  -webkit-backdrop-filter: blur(22px) saturate(1.7);
+  backdrop-filter: blur(22px) saturate(1.7);
+}
+
+.glass-dark {
+  background: color-mix(in srgb, var(--char) 42%, transparent);
+  border: 1px solid rgb(255 255 255 / 0.22);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.32);
+}
+
+.glass-light {
+  background: color-mix(in srgb, var(--cream) 62%, transparent);
+  border: 1px solid rgb(255 255 255 / 0.66);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.85);
+}
+
+::selection {
+  background: var(--tea);
+  color: var(--cream);
+}
+
+
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  30% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+
+.steam {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: steam-rise 1.4s ease-in-out infinite;
+}
+
+.marquee-track {
+  animation: marquee 120s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+
+  .steam {
+    animation: none;
+    opacity: 0.45;
+  }
+
+  [data-loader] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  #menu {
+    overflow: visible;
+  }
+
+  #menu [data-track] {
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    height: auto;
+  }
+
+  #menu .menu-detail {
+    opacity: 1;
+  }
+
+  #food [data-reel] {
+    height: auto;
+  }
+
+  #food [data-slide] {
+    position: relative;
+    inset: auto;
+    height: 100svh;
+    opacity: 1;
+  }
+
+  #food [data-frame],
+  #menu [data-plate] {
+    transform: none;
+  }
+
+  #menu article {
+    width: 100%;
+    height: 78vh;
+  }
+}
+

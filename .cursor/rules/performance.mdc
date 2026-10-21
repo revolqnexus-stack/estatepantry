@@ -1,0 +1,13 @@
+---
+description: Performance budget and device handling
+alwaysApply: true
+---
+
+- Targets: LCP < 2.5s on mid-range Android over 4G, CLS < 0.05, 60fps scroll.
+- Images: `next/image`, WebP/AVIF, explicit sizes, `priority` only on the hero poster.
+- Video: H.264 + WebM, <= 3MB, always a poster, `playsInline muted loop`, lazy-load anything below the fold.
+- Frame sequence: desktop 120 frames at 1280w, mobile 60 frames at 720w. Total mobile payload <= 4MB. Load first frame instantly, rest in idle time.
+- `useDeviceTier` hook returns `high | low` from `navigator.hardwareConcurrency`, `deviceMemory`, and viewport. On `low`: no R3F shader (use static poster), no ember particles, fewer frames, no custom cursor.
+- Fonts: `next/font`, max 2 families, `display: swap`.
+- No heavy libraries without asking. Check bundle impact before adding a dependency.
+- Dynamic import the R3F hero with `ssr: false`.

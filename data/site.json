@@ -1,0 +1,133 @@
+{
+  "name": "The Estate Pantry",
+  "tagline": "Slow living, wood-fired.",
+  "address": "Kanjar–Pullikanam–Vagamon Road, Pullikanam Tea Estate, Vagamon, Kerala",
+  "phone": "TODO",
+  "whatsapp": "TODO",
+  "instagram": "TODO",
+  "hours": "TODO",
+  "mapsUrl": "TODO",
+  "story": {
+    "eyebrow": "The Quarters",
+    "title": "Seventy years old. Gently restored.",
+    "body": [
+      "The Estate Pantry lives inside the old Field Officers' Quarters of the Pullikanam Tea Estate, a colonial-era building that has watched over these hills for seventy years.",
+      "We didn't rebuild it. We restored it slowly and carefully, so the walls still carry their history and the rooms still feel like they did when the estate was young.",
+      "Come in, sit down, and take your time. Nobody's in a hurry here."
+    ],
+    "stats": [
+      { "value": "70", "label": "years of history" },
+      { "value": "1", "label": "brick oven" },
+      { "value": "0", "label": "rushed meals" }
+    ],
+    "image": "/images/estate-pantry-board.jpg"
+  },
+  "food": {
+    "eyebrow": "The Kitchen",
+    "title": "Honest food. Nothing trendy.",
+    "body": [
+      "Our kitchen is built around a traditional brick oven. Every pizza starts as a slow-fermented dough, is stretched by hand, and is baked in wood fire.",
+      "We cook with what the estate and the region give us, and we keep it simple: good ingredients, patient hands, proper heat."
+    ],
+    "pillars": [
+      {
+        "title": "Slow-fermented",
+        "text": "Dough rested long enough to be light, airy and full of flavour.",
+        "image": "/images/food/slow-fermented.jpg"
+      },
+      {
+        "title": "Wood-fired",
+        "text": "A real brick oven, real flame, a blistered crust.",
+        "image": "/images/pizzeria.jpg"
+      },
+      {
+        "title": "Estate-grown",
+        "text": "Local and estate ingredients wherever we can, because it tastes better and it's the right way to cook.",
+        "image": "/images/tables.jpg"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "category": "Pizza",
+      "name": "Spiced Chicken Pizza",
+      "description": "Wood-fired, slow-fermented crust with spiced chicken.",
+      "tag": "Signature",
+      "image": "/images/menu/spiced-chicken-pizza.jpg"
+    },
+    {
+      "category": "Bread",
+      "name": "Rosemary Herb Garlic Bread",
+      "description": "Baked in the brick oven, fragrant with rosemary and garlic.",
+      "image": "/images/menu/rosemary-herb-garlic-bread.jpg"
+    },
+    {
+      "category": "Pasta",
+      "name": "Pasta",
+      "description": "Comforting, unfussy, made to order.",
+      "image": "/images/menu/pasta.jpg"
+    },
+    {
+      "category": "Pasta",
+      "name": "Spaghetti",
+      "description": "Classic and honest.",
+      "image": "/images/menu/spaghetti.jpg"
+    },
+    {
+      "category": "Bakery",
+      "name": "Freshly Baked Treats",
+      "description": "Whatever came out of the oven this morning.",
+      "image": "/images/menu/freshly-baked-treats.jpg"
+    },
+    {
+      "category": "Drinks",
+      "name": "Estate Tea",
+      "description": "Specialty tea from the hills around you.",
+      "image": "/images/menu/estate-tea.jpg"
+    },
+    {
+      "category": "Drinks",
+      "name": "Mango Juice",
+      "description": "Cold and fresh.",
+      "image": "/images/menu/mango-juice.jpg"
+    },
+    {
+      "category": "Drinks",
+      "name": "Peach Iced Tea",
+      "description": "Estate tea, chilled, with peach.",
+      "image": "/images/menu/peach-iced-tea.jpg"
+    },
+    {
+      "category": "Drinks",
+      "name": "Lemon Iced Tea",
+      "description": "Sharp, cool, refreshing.",
+      "image": "/images/menu/lemon-iced-tea.jpg"
+    }
+  ],
+  "menuNote": "Menu changes with the season and the oven. Ask us what's fresh today.",
+  "estate": {
+    "eyebrow": "The Estate",
+    "title": "Mist, tea, and unhurried afternoons.",
+    "body": [
+      "We sit in the middle of the Pullikanam Tea Estate. Look out and you'll see rows of tea running down into the mist.",
+      "Bring a book, bring a friend, bring the dog. We're pet-friendly, we're quiet, and the only thing on the schedule is the view."
+    ],
+    "points": [
+      "Surrounded by tea gardens",
+      "Misty hill views",
+      "Pet friendly",
+      "Quiet, slow-living atmosphere"
+    ]
+  },
+  "visit": {
+    "eyebrow": "Visit",
+    "image": "/images/interior-table.jpg",
+    "title": "Find us in the hills.",
+    "body": "Right on the Kanjar–Pullikanam–Vagamon Road, inside the Pullikanam Tea Estate. Part of The Highland Circle, along with the Vanilla County heritage homestay next door.",
+    "cta": ["Get Directions", "WhatsApp", "Call"]
+  },
+  "footer": {
+    "line": "A Highland Circle project.",
+    "credit": "Founders: Tharun, Lakshmi Menon and the Vanilla County team."
+  }
+}

@@ -1,0 +1,28 @@
+---
+description: Design tokens, typography, and visual direction
+alwaysApply: true
+---
+
+Brand feel: slow living, tea estate mist, colonial heritage, wood-fired warmth. Quiet, premium, unhurried.
+
+Tokens (define in Tailwind config / CSS vars):
+- --mist: #DCE5DA (misty green)
+- --tea: #2F4A3A (deep tea green)
+- --cream: #F4EDE1
+- --ember: #D9622B
+- --char: #1A1714 (charcoal)
+- --bark: #6B4A2F (accent brown)
+
+Type:
+- Display: a refined serif (Fraunces, Cormorant Garamond, or similar). Large, light weight, tight tracking.
+- Body: clean sans (DM Sans or Manrope). Never Inter, Arial, or system default.
+- Headlines huge on desktop (clamp 3.5rem to 9rem), generous line spacing on body.
+
+Rules:
+- Lots of whitespace. One idea per viewport.
+- Full-bleed imagery, minimal borders and shadows, no cards-with-drop-shadows look.
+- No purple/blue gradients, no glassmorphism, no emoji in UI, no stock "hero with two buttons" layout.
+- Buttons: pill, subtle, magnetic hover. Primary = ember on dark, tea on light.
+- Copy tone: warm, short, unpretentious. No marketing buzzwords.
+- Sticky bar (WhatsApp / Call / Directions) on every viewport, bottom on mobile, side or top on desktop.
+- Minimum tap target 44px. Contrast AA on all text.

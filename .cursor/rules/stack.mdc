@@ -1,0 +1,14 @@
+---
+description: Tech stack and project structure
+alwaysApply: true
+---
+
+- Next.js App Router, TypeScript strict, Tailwind.
+- Animation: GSAP + ScrollTrigger + @gsap/react, Lenis for smooth scroll.
+- Framer Motion only for UI transitions (menus, modals, hover). Never for scroll-scrubbed work.
+- React Three Fiber only in the hero mist shader. Nowhere else.
+- Menu content lives in `/data/menu.json`. Never hardcode menu items in components.
+- Structure: `/components/sections/*` one file per section, `/components/ui/*`, `/lib/gsap.ts` (plugin registration), `/hooks/*`.
+- Use Context7 to check current API docs for GSAP, Lenis, R3F and Next before writing code.
+- Read PLAN.md before starting any section. Build one section at a time and nothing outside the request.
+- Server components by default. `"use client"` only on animated components.
