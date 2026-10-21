@@ -181,46 +181,46 @@ export function Hero({ seen = false }: { seen?: boolean }) {
       </header>
 
       <div className="relative flex h-full flex-col justify-end px-5 pt-24 pb-36 md:px-12 md:pt-28 md:pb-16">
-        <p
-          data-reveal
-          className="mb-6 flex items-center gap-3 text-[0.7rem] tracking-[0.22em] text-cream uppercase"
-        >
-          <span className="ember-dot size-1.5 rounded-full bg-ember" aria-hidden />
-          Now open
-        </p>
-        <h1 className="font-display text-[clamp(3.5rem,11vw,8.5rem)] leading-[0.92] font-light tracking-tight text-cream">
-          {words.map((word) => (
-            <span key={word} className="block overflow-hidden pt-[0.06em] pb-[0.28em]">
-              <span data-word className="block">
-                {word}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between md:gap-16">
+          <div>
+            <p
+              data-reveal
+              className="mb-6 flex items-center gap-3 text-[0.7rem] tracking-[0.22em] text-cream uppercase"
+            >
+              <span className="ember-dot size-1.5 rounded-full bg-ember" aria-hidden />
+              Now open
+            </p>
+            <h1 className="font-display text-[clamp(3.5rem,11vw,8.5rem)] leading-[0.92] font-light tracking-tight text-cream">
+              {words.map((word) => (
+                <span key={word} className="block overflow-hidden pt-[0.06em] pb-[0.28em]">
+                  <span data-word className="block">
+                    {word}
+                  </span>
+                </span>
+              ))}
+            </h1>
+            <p
+              data-reveal
+              className="mt-5 font-display text-[clamp(1.5rem,2.4vw,2.25rem)] leading-none font-light tracking-[0.04em] text-cream"
+            >
+              {taglineRest}
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-8 md:mt-0 md:max-w-[16rem] md:items-end md:pb-2 md:text-right">
+            <div data-reveal className="hidden flex-col items-center gap-3 md:flex">
+              <span className="text-[0.7rem] tracking-[0.22em] text-cream uppercase">Scroll</span>
+              <span className="block h-10 overflow-hidden">
+                <span data-cue-line className="block h-10 w-px bg-cream" />
               </span>
-            </span>
-          ))}
-        </h1>
-        <p
-          data-reveal
-          className="mt-5 font-display text-[clamp(1.5rem,2.4vw,2.25rem)] leading-none font-light tracking-[0.04em] text-cream"
-        >
-          {taglineRest}
-        </p>
-        <p
-          data-reveal
-          className="mt-8 max-w-lg text-xs leading-relaxed tracking-[0.14em] text-cream/85 uppercase"
-        >
-          {site.address}
-        </p>
-      </div>
-
-      <div
-        data-reveal
-        className="absolute right-12 bottom-10 hidden flex-col items-center gap-3 md:flex"
-      >
-        <span className="text-[0.7rem] tracking-[0.22em] text-cream uppercase">
-          Scroll
-        </span>
-        <span className="block h-10 overflow-hidden">
-          <span data-cue-line className="block h-10 w-px bg-cream" />
-        </span>
+            </div>
+            <p
+              data-reveal
+              className="max-w-sm text-xs leading-relaxed tracking-[0.14em] text-cream/85 uppercase md:max-w-none"
+            >
+              {site.address}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

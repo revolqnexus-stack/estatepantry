@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { site } from "@/lib/site";
+import { Prose } from "@/components/ui/prose";
 import { useReveal } from "@/components/ui/reveal";
 
 export function Food() {
@@ -67,13 +68,7 @@ export function Food() {
         >
           {food.title}
         </h2>
-        <div className="mt-10 max-w-xl space-y-6 text-lg leading-relaxed">
-          {food.body.map((paragraph) => (
-            <p data-reveal key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <Prose paragraphs={food.body} />
       </div>
 
       <div ref={reel} data-reel className="relative h-svh overflow-hidden bg-char">
@@ -102,7 +97,9 @@ export function Food() {
               <h3 className="mt-4 max-w-md font-display text-[clamp(2.75rem,4.5vw,4.5rem)] leading-[0.92] font-light text-cream">
                 {pillar.title}
               </h3>
-              <p className="mt-5 max-w-md text-lg leading-relaxed text-cream/90">{pillar.text}</p>
+              <p className="mt-5 max-w-sm text-[0.95rem] leading-[1.7] tracking-[0.012em] text-cream/85">
+                {pillar.text}
+              </p>
             </div>
           </article>
         ))}

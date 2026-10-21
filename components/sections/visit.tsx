@@ -12,6 +12,7 @@ import {
   site,
   whatsappHref,
 } from "@/lib/site";
+import { Prose } from "@/components/ui/prose";
 import { useReveal } from "@/components/ui/reveal";
 
 const pill =
@@ -43,9 +44,7 @@ export function Visit() {
         >
           {visit.title}
         </h2>
-        <p data-reveal className="mt-8 max-w-xl text-lg leading-relaxed">
-          {visit.body}
-        </p>
+        <Prose paragraphs={[visit.body]} />
         <div data-reveal className="mt-10">
           <p className="text-xs tracking-[0.22em] text-bark uppercase">{visit.ratingPrompt}</p>
           <div className="mt-1">

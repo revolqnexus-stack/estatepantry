@@ -49,11 +49,12 @@ test("scrolls the full page and shows every section", async ({ page }, testInfo)
       }
     }
 
-    if (section.id === "menu" && testInfo.project.name === "desktop") {
+    if (section.id === "menu") {
       const track = block.locator("[data-track]");
       const before = await track.evaluate((element) => getComputedStyle(element).transform);
-      await page.mouse.move(720, 420);
-      await page.mouse.wheel(0, 1600);
+      const viewport = page.viewportSize();
+      await page.mouse.move((viewport?.width ?? 390) / 2, (viewport?.height ?? 800) * 0.55);
+      await page.mouse.wheel(0, 2000);
       await expect
         .poll(async () => track.evaluate((element) => getComputedStyle(element).transform))
         .not.toBe(before);

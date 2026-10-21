@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { site } from "@/lib/site";
+import { Prose } from "@/components/ui/prose";
 import { useReveal } from "@/components/ui/reveal";
 
 const hills = [
@@ -127,13 +128,7 @@ export function Story() {
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col justify-center px-5 pt-24 pb-52 md:pt-32 md:pr-16 md:pb-64 md:pl-12">
-        <div className="max-w-xl space-y-6 text-lg leading-relaxed">
-          {story.body.map((paragraph) => (
-            <p data-reveal key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <Prose paragraphs={story.body} />
         <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-tea/20 pt-8">
           {story.stats.map((stat) => (
             <div data-reveal key={stat.label}>

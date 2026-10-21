@@ -14,19 +14,15 @@ export function Menu() {
     () => {
       const media = gsap.matchMedia();
 
-      media.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
-        const track = root.current?.querySelector<HTMLElement>("[data-track]");
-        const pane = track?.parentElement;
+      const film = (trigger: HTMLElement, track: HTMLElement, pane: HTMLElement) => {
         const plates = gsap.utils.toArray<HTMLElement>("[data-plate]");
-        if (!track || !pane) return;
-
         const distance = () => Math.max(track.scrollWidth - pane.clientWidth, 0);
         gsap.set(plates, { scale: 1.14 });
 
         gsap
           .timeline({
             scrollTrigger: {
-              trigger: root.current,
+              trigger,
               pin: true,
               scrub: 1,
               anticipatePin: 1,
@@ -39,6 +35,50 @@ export function Menu() {
           })
           .to(track, { x: () => -distance(), ease: "none" }, 0)
           .to(plates, { xPercent: -7, ease: "none" }, 0);
+      };
+
+      media.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
+        const track = root.current?.querySelector<HTMLElement>("[data-track]");
+        const pane = track?.parentElement;
+        if (!track || !pane || !root.current) return;
+        film(root.current, track, pane);
+      });
+
+      media.add("(max-width: 767px) and (prefers-reduced-motion: no-preference)", () => {
+        const track = root.current?.querySelector<HTMLElement>("[data-track]");
+        const pane = track?.parentElement;
+        const cards = gsap.utils.toArray<HTMLElement>("[data-card]");
+        if (!track || !pane || cards.length === 0) return;
+
+        const fit = () => {
+          pane.style.height = "100svh";
+          pane.style.overflow = "hidden";
+          track.style.flexDirection = "row";
+          track.style.height = "100%";
+          track.style.width = "max-content";
+          const width = pane.clientWidth;
+          cards.forEach((card) => {
+            card.style.width = `${width}px`;
+            card.style.height = "100svh";
+          });
+        };
+
+        ScrollTrigger.addEventListener("refreshInit", fit);
+        fit();
+        film(pane, track, pane);
+
+        return () => {
+          ScrollTrigger.removeEventListener("refreshInit", fit);
+          pane.style.height = "";
+          pane.style.overflow = "";
+          track.style.flexDirection = "";
+          track.style.height = "";
+          track.style.width = "";
+          cards.forEach((card) => {
+            card.style.width = "";
+            card.style.height = "";
+          });
+        };
       });
 
       return () => media.revert();
@@ -47,7 +87,7 @@ export function Menu() {
   );
 
   return (
-    <section id="menu" ref={root} className="overflow-hidden bg-char text-cream md:h-svh">
+    <section id="menu" ref={root} className="bg-char text-cream md:h-svh md:overflow-hidden">
       <div className="md:flex md:h-svh">
         <header className="flex max-w-md shrink-0 flex-col justify-center px-5 py-24 md:w-[28rem] md:px-0 md:py-0 md:pl-12 md:pr-10">
           <p data-reveal className="text-xs tracking-[0.22em] text-cream/70 uppercase">
@@ -65,6 +105,7 @@ export function Menu() {
         {site.menu.map((item, index) => (
           <article
             key={item.name}
+            data-card
             className="relative h-[82vh] w-full shrink-0 overflow-hidden md:h-svh md:w-[68vw]"
           >
             <div data-plate className="absolute -inset-[8%]">
@@ -92,7 +133,9 @@ export function Menu() {
               {"tag" in item && item.tag ? (
                 <p className="mt-4 text-[0.72rem] tracking-[0.22em] text-ember uppercase">{item.tag}</p>
               ) : null}
-              <p className="menu-detail mt-4 max-w-md leading-relaxed text-cream/90">{item.description}</p>
+              <p className="menu-detail mt-5 max-w-sm text-[0.95rem] leading-[1.7] tracking-[0.012em] text-cream/85">
+                {item.description}
+              </p>
             </div>
           </article>
         ))}

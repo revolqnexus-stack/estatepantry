@@ -31,10 +31,10 @@ export function Footer() {
 
         <div className="mt-16 grid gap-12 border-t border-cream/20 pt-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-4">
-            <p data-reveal className="max-w-xs text-lg leading-relaxed">
+            <p data-reveal className="max-w-xs font-display text-[clamp(1.6rem,2vw,2rem)] leading-snug font-light">
               {site.footer.line}
             </p>
-            <p data-reveal className="mt-3 max-w-xs leading-relaxed text-cream/80">
+            <p data-reveal className="mt-4 max-w-xs text-sm leading-relaxed tracking-[0.02em] text-cream/75">
               {site.footer.credit}
             </p>
           </div>
@@ -43,7 +43,7 @@ export function Footer() {
             <p data-reveal className="text-xs tracking-[0.22em] text-cream/60 uppercase">
               Find us
             </p>
-            <p data-reveal className="mt-4 max-w-sm text-lg leading-relaxed">
+            <p data-reveal className="mt-4 max-w-sm font-display text-2xl leading-snug font-light">
               {site.address}
             </p>
             {hours ? (

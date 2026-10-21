@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
 import "lenis/dist/lenis.css";
+import { StripCursorRefs } from "@/components/dev/strip-cursor-refs";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { StickyBar } from "@/components/ui/sticky-bar";
 import { site } from "@/lib/site";
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="font-sans antialiased">
+        <StripCursorRefs />
         <SmoothScroll>
           {children}
           <StickyBar />

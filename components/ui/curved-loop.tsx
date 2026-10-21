@@ -371,6 +371,7 @@ export default function CurvedLoop({
         ref={svgRef}
         className="curved-loop-svg"
         viewBox={geometry.viewBox}
+        preserveAspectRatio={ring ? "xMidYMid meet" : "xMidYMid slice"}
         style={{
           fontSize,
           fontWeight,

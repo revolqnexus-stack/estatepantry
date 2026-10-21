@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { estatePoster, estateVideo } from "@/lib/assets";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { site } from "@/lib/site";
+import { Prose } from "@/components/ui/prose";
 import { useReveal } from "@/components/ui/reveal";
 
 export function Estate() {
@@ -67,16 +68,17 @@ export function Estate() {
         >
           {estate.title}
         </h2>
-        <div className="mt-10 max-w-xl space-y-6 text-lg leading-relaxed">
-          {estate.body.map((paragraph) => (
-            <p data-reveal key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2">
-          {estate.points.map((point) => (
-            <li data-reveal key={point} className="border-t border-cream/30 pt-4">
+        <Prose paragraphs={estate.body} />
+        <ul className="mt-14 max-w-md md:ml-14">
+          {estate.points.map((point, index) => (
+            <li
+              data-reveal
+              key={point}
+              className="flex items-baseline gap-5 border-t border-cream/20 py-3.5 text-sm tracking-[0.04em]"
+            >
+              <span className="font-display text-lg leading-none font-light text-ember">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               {point}
             </li>
           ))}

@@ -5,21 +5,17 @@ export function Marquee() {
   const marqueeText = site.menu.map((item) => item.name).join("   ·   ");
 
   return (
-    <div className="overflow-hidden bg-char py-3 text-cream md:py-4">
+    <div className="menu-loop overflow-hidden bg-char text-cream">
       <CurvedLoop
         marqueeText={marqueeText}
-        shape="arc"
-        speed={1}
-        curveAmount={48}
+        shape="line"
+        speed={0.7}
         direction="left"
-        fontSize={28}
+        fontSize={36}
         fontWeight={300}
-        letterSpacing={1}
-        separator="·"
-        separatorColor="#D9622B"
-        edgeFade={0.18}
-        scrollBoost={0.15}
-        interactive
+        letterSpacing={1.5}
+        edgeFade={0.32}
+        interactive={false}
         className="font-display"
       />
     </div>
