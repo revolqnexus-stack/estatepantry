@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import PeekRating from "@/components/ui/peek-rating";
 import {
+  googleReviewHref,
   hoursLabel,
   instagramHref,
   mapsHref,
@@ -44,6 +46,26 @@ export function Visit() {
         <p data-reveal className="mt-8 max-w-xl text-lg leading-relaxed">
           {visit.body}
         </p>
+        <div data-reveal className="mt-10">
+          <p className="text-xs tracking-[0.22em] text-bark uppercase">{visit.ratingPrompt}</p>
+          <div className="mt-1">
+            <PeekRating
+              count={visit.ratingLabels.length}
+              labels={visit.ratingLabels}
+              shape="star"
+              activeColor="#D9622B"
+              idleColor="#6B4A2F"
+              tipColor="#1A1714"
+              tipTextColor="#F4EDE1"
+              size={26}
+              ariaLabel="Rate your visit"
+              onChange={() => {
+                const href = googleReviewHref();
+                if (href) window.open(href, "_blank", "noopener,noreferrer");
+              }}
+            />
+          </div>
+        </div>
         <p
           data-reveal
           className="mt-10 max-w-3xl font-display text-[clamp(1.85rem,3.4vw,3.25rem)] leading-snug font-light"

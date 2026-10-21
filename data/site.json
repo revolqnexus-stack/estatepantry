@@ -7,6 +7,7 @@
   "instagram": "TODO",
   "hours": "TODO",
   "mapsUrl": "TODO",
+  "googlePlaceId": "TODO",
   "story": {
     "eyebrow": "The Quarters",
     "title": "Seventy years old. Gently restored.",
@@ -124,7 +125,9 @@
     "image": "/images/interior-table.jpg",
     "title": "Find us in the hills.",
     "body": "Right on the Kanjar–Pullikanam–Vagamon Road, inside the Pullikanam Tea Estate. Part of The Highland Circle, along with the Vanilla County heritage homestay next door.",
-    "cta": ["Get Directions", "WhatsApp", "Call"]
+    "cta": ["Get Directions", "WhatsApp", "Call"],
+    "ratingPrompt": "How was it?",
+    "ratingLabels": ["Not for us", "Fair", "Good", "Lovely", "Come again"]
   },
   "footer": {
     "line": "A Highland Circle project.",

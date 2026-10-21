@@ -83,6 +83,20 @@ body {
   animation: steam-rise 1.4s ease-in-out infinite;
 }
 
+.ember-dot {
+  animation: ember-blink 1.8s ease-in-out infinite;
+}
+
+@keyframes ember-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
 .marquee-track {
   animation: marquee 120s linear infinite;
 }
@@ -104,6 +118,11 @@ body {
   .steam {
     animation: none;
     opacity: 0.45;
+  }
+
+  .ember-dot {
+    animation: none;
+    opacity: 1;
   }
 
   [data-loader] {

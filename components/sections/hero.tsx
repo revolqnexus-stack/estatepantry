@@ -185,12 +185,12 @@ export function Hero({ seen = false }: { seen?: boolean }) {
           data-reveal
           className="mb-6 flex items-center gap-3 text-[0.7rem] tracking-[0.22em] text-cream uppercase"
         >
-          <span className="size-1.5 rounded-full bg-ember" aria-hidden />
+          <span className="ember-dot size-1.5 rounded-full bg-ember" aria-hidden />
           Now open
         </p>
-        <h1 className="font-display text-[clamp(3.5rem,11vw,8.5rem)] leading-[0.88] font-light tracking-tight text-cream">
+        <h1 className="font-display text-[clamp(3.5rem,11vw,8.5rem)] leading-[0.92] font-light tracking-tight text-cream">
           {words.map((word) => (
-            <span key={word} className="block overflow-hidden py-[0.08em]">
+            <span key={word} className="block overflow-hidden pt-[0.06em] pb-[0.28em]">
               <span data-word className="block">
                 {word}
               </span>

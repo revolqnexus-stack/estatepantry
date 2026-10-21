@@ -19,6 +19,12 @@ export function whatsappHref(): string | null {
   return digits ? `https://wa.me/${digits}` : null;
 }
 
+/** Opens Google's own review form. A widget cannot post a rating into a Business Profile. */
+export function googleReviewHref(): string | null {
+  if (!ready(site.googlePlaceId)) return null;
+  return `https://search.google.com/local/writereview?placeid=${encodeURIComponent(site.googlePlaceId)}`;
+}
+
 export function mapsHref(): string | null {
   return ready(site.mapsUrl) ? site.mapsUrl : null;
 }
