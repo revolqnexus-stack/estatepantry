@@ -16,6 +16,7 @@ export const instant = false;
 export default function Home() {
   return (
     <main>
+      <Loader />
       <Suspense fallback={<Hero seen />}>
         <Opening />
       </Suspense>
@@ -35,10 +36,5 @@ async function Opening() {
   const jar = await cookies();
   const seen = jar.get(visitKey)?.value === "1";
 
-  return (
-    <>
-      {seen ? null : <Loader />}
-      <Hero seen={seen} />
-    </>
-  );
+  return <Hero seen={seen} />;
 }

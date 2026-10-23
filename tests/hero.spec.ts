@@ -88,7 +88,7 @@ test("skips the loader on a repeat visit", async ({ page }) => {
     },
   ]);
   await page.goto("/");
-  await expect(page.locator("[data-loader]")).toHaveCount(0);
+  await expect(page.locator("[data-loader]")).toBeHidden();
   await expect(page.getByRole("heading", { name: "Slow living" })).toBeVisible();
 });
 
