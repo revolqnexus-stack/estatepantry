@@ -145,7 +145,7 @@ export function Hero({ seen = false }: { seen?: boolean }) {
         </video>
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-char/55 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-linear-to-t from-char/80 via-char/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[52%] bg-linear-to-t from-char/72 via-char/22 to-transparent" />
 
       <header
         className={`glass-nav fixed inset-x-3 top-3 z-40 flex items-center justify-between gap-3 rounded-full px-4 py-2 transition-colors duration-500 md:inset-x-6 md:px-6 ${
@@ -217,7 +217,7 @@ export function Hero({ seen = false }: { seen?: boolean }) {
               data-reveal
               className="max-w-sm text-xs leading-relaxed tracking-[0.14em] text-cream/85 uppercase md:max-w-none"
             >
-              {site.address}
+              {site.place}
             </p>
           </div>
         </div>

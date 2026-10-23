@@ -57,7 +57,7 @@ export function Estate() {
         preload="none"
         aria-hidden
       />
-      <div className="absolute inset-0 bg-char/55" />
+      <div className="absolute inset-0 bg-char/40" />
       <div className="relative z-10 mx-auto flex min-h-svh max-w-5xl flex-col justify-center px-5 pt-28 pb-36 md:py-36 md:pr-16 md:pl-12">
         <p data-reveal className="text-xs tracking-[0.22em] text-cream/80 uppercase">
           {estate.eyebrow}
@@ -76,7 +76,7 @@ export function Estate() {
               key={point}
               className="flex items-baseline gap-5 border-t border-cream/20 py-3.5 text-sm tracking-[0.04em]"
             >
-              <span className="font-display text-lg leading-none font-light text-ember">
+              <span className="font-display text-lg leading-none font-light text-cream/45">
                 {String(index + 1).padStart(2, "0")}
               </span>
               {point}

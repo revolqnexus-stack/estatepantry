@@ -1,6 +1,7 @@
 {
   "name": "The Estate Pantry",
   "tagline": "Slow living, wood-fired.",
+  "place": "Pullikanam, Vagamon",
   "address": "Kanjar–Pullikanam–Vagamon Road, Pullikanam Tea Estate, Vagamon, Kerala",
   "phone": "TODO",
   "whatsapp": "TODO",
@@ -52,56 +53,56 @@
     {
       "category": "Pizza",
       "name": "Spiced Chicken Pizza",
-      "description": "Wood-fired, slow-fermented crust with spiced chicken.",
+      "description": "Hand-stretched dough, spiced chicken, blistered in the brick oven.",
       "tag": "Signature",
       "image": "/images/menu/spiced-chicken-pizza.jpg"
     },
     {
       "category": "Bread",
       "name": "Rosemary Herb Garlic Bread",
-      "description": "Baked in the brick oven, fragrant with rosemary and garlic.",
+      "description": "Pulled from the oven with rosemary, garlic, and a little smoke.",
       "image": "/images/menu/rosemary-herb-garlic-bread.jpg"
     },
     {
       "category": "Pasta",
       "name": "Pasta",
-      "description": "Comforting, unfussy, made to order.",
+      "description": "A bowl of whatever we made this afternoon. Soft, simple, to share.",
       "image": "/images/menu/pasta.jpg"
     },
     {
       "category": "Pasta",
       "name": "Spaghetti",
-      "description": "Classic and honest.",
+      "description": "Long noodles, a quiet sauce, eaten slowly.",
       "image": "/images/menu/spaghetti.jpg"
     },
     {
       "category": "Bakery",
       "name": "Freshly Baked Treats",
-      "description": "Whatever came out of the oven this morning.",
+      "description": "Whatever came out of the oven this morning. Ask at the counter.",
       "image": "/images/menu/freshly-baked-treats.jpg"
     },
     {
       "category": "Drinks",
       "name": "Estate Tea",
-      "description": "Specialty tea from the hills around you.",
+      "description": "Leaf from the gardens around the quarters, poured when you are ready.",
       "image": "/images/menu/estate-tea.jpg"
     },
     {
       "category": "Drinks",
       "name": "Mango Juice",
-      "description": "Cold and fresh.",
+      "description": "Cold mango. Nothing else in the glass.",
       "image": "/images/menu/mango-juice.jpg"
     },
     {
       "category": "Drinks",
       "name": "Peach Iced Tea",
-      "description": "Estate tea, chilled, with peach.",
+      "description": "Estate tea, chilled, a little peach.",
       "image": "/images/menu/peach-iced-tea.jpg"
     },
     {
       "category": "Drinks",
       "name": "Lemon Iced Tea",
-      "description": "Sharp, cool, refreshing.",
+      "description": "Estate tea, lemon, ice. Sharp enough for the afternoon.",
       "image": "/images/menu/lemon-iced-tea.jpg"
     }
   ],

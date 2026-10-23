@@ -3,8 +3,8 @@ export function Prose({ paragraphs }: { paragraphs: string[] }) {
   if (!lead) return null;
 
   return (
-    <div className="mt-14 max-w-[34rem] md:mt-16 md:pl-14">
-      <span className="mb-6 block h-px w-10 bg-ember" aria-hidden />
+    <div className="mt-16 max-w-[34rem] md:mt-24 md:pl-14">
+      <span className="mb-7 block h-px w-8 bg-current/30" aria-hidden />
       <p
         data-reveal
         className="font-display text-[clamp(1.65rem,2.3vw,2.15rem)] leading-[1.32] font-light tracking-[-0.02em]"

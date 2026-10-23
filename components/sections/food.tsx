@@ -58,7 +58,7 @@ export function Food() {
 
   return (
     <section id="food" ref={root} className="bg-cream text-tea">
-      <div className="mx-auto flex min-h-[70vh] max-w-5xl flex-col justify-center px-5 pt-28 pb-20 md:min-h-svh md:py-36 md:pr-16 md:pl-12">
+      <div className="paper mx-auto flex min-h-[70vh] max-w-5xl flex-col justify-center px-5 pt-32 pb-24 md:min-h-svh md:py-40 md:pr-16 md:pl-12">
         <p data-reveal className="text-xs tracking-[0.22em] text-bark uppercase">
           {food.eyebrow}
         </p>
@@ -89,7 +89,7 @@ export function Food() {
                 onLoad={() => ScrollTrigger.refresh()}
               />
             </div>
-            <div className="absolute inset-0 bg-linear-to-t from-char/85 via-char/15 to-char/25" />
+            <div className="absolute inset-0 bg-linear-to-t from-char/70 via-char/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 max-w-xl px-5 pb-28 md:pb-20 md:pl-12">
               <p className="text-xs tracking-[0.22em] text-cream/70 uppercase">
                 {String(index + 1).padStart(2, "0")} / {String(food.pillars.length).padStart(2, "0")}

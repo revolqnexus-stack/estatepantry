@@ -118,7 +118,7 @@ export function Menu() {
                 onLoad={() => ScrollTrigger.refresh()}
               />
             </div>
-            <div className="absolute inset-0 bg-linear-to-t from-char/85 via-char/10 to-char/20" />
+            <div className="absolute inset-0 bg-linear-to-t from-char/70 via-transparent to-transparent" />
             <p
               className="pointer-events-none absolute top-24 right-6 font-display text-[clamp(4rem,8vw,7rem)] leading-none font-light text-cream/30 md:top-28 md:right-12"
               aria-hidden

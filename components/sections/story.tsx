@@ -113,7 +113,7 @@ export function Story() {
             onLoad={() => ScrollTrigger.refresh()}
           />
         </div>
-        <div className="absolute inset-0 bg-linear-to-t from-char/80 via-char/30 to-char/15" />
+        <div className="absolute inset-0 bg-linear-to-t from-char/70 via-char/20 to-transparent" />
         <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-28 md:pb-20 md:pl-12">
           <p data-reveal className="text-xs tracking-[0.22em] text-cream/80 uppercase">
             {story.eyebrow}
@@ -127,7 +127,7 @@ export function Story() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col justify-center px-5 pt-24 pb-52 md:pt-32 md:pr-16 md:pb-64 md:pl-12">
+      <div className="paper relative z-10 mx-auto flex max-w-5xl flex-col justify-center px-5 pt-32 pb-52 md:pt-40 md:pr-16 md:pb-64 md:pl-12">
         <Prose paragraphs={story.body} />
         <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-tea/20 pt-8">
           {story.stats.map((stat) => (
