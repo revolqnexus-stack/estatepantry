@@ -114,6 +114,11 @@ export function Story() {
           />
         </div>
         <div className="absolute inset-0 bg-linear-to-t from-char/70 via-char/20 to-transparent" />
+        <div className="story-sun absolute left-[12%] top-[16%] size-32 rounded-full bg-cream/15 blur-3xl md:size-56" aria-hidden />
+        <div className="absolute inset-x-5 top-28 z-10 flex items-start justify-between text-cream/70 md:inset-x-12">
+          <span className="font-display text-5xl font-light md:text-7xl">01</span>
+          <span className="max-w-[8rem] text-right text-[0.65rem] leading-relaxed tracking-[0.18em] uppercase">A room with a view<br />Pullikanam, Kerala</span>
+        </div>
         <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-28 md:pb-20 md:pl-12">
           <p data-reveal className="text-xs tracking-[0.22em] text-cream/80 uppercase">
             {story.eyebrow}
@@ -128,14 +133,20 @@ export function Story() {
       </div>
 
       <div className="paper relative z-10 mx-auto flex max-w-5xl flex-col justify-center px-5 pt-32 pb-52 md:pt-40 md:pr-16 md:pb-64 md:pl-12">
-        <Prose paragraphs={story.body} />
-        <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-tea/20 pt-8">
+        <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
+          <div data-reveal>
+            <p className="text-[0.65rem] tracking-[0.22em] text-bark uppercase">The beginning</p>
+            <p className="mt-5 font-display text-3xl leading-tight font-light md:text-4xl">Old walls. New rituals.</p>
+          </div>
+          <Prose paragraphs={story.body} />
+        </div>
+        <dl className="mt-16 grid grid-cols-3 gap-3 border-t border-tea/20 pt-8 md:mt-24 md:gap-6">
           {story.stats.map((stat) => (
-            <div data-reveal key={stat.label}>
-              <dt className="font-display text-[clamp(4rem,9vw,8rem)] leading-none font-light">
+            <div data-reveal key={stat.label} className="story-stat rounded-2xl border border-tea/10 bg-cream/55 p-4 md:p-6">
+              <dt className="font-display text-[clamp(3.4rem,8vw,8rem)] leading-none font-light">
                 {stat.value}
               </dt>
-              <dd className="mt-3 text-xs tracking-[0.16em] uppercase">{stat.label}</dd>
+              <dd className="mt-4 max-w-[8rem] text-[0.65rem] leading-relaxed tracking-[0.16em] uppercase">{stat.label}</dd>
             </div>
           ))}
         </dl>

@@ -21,15 +21,22 @@ export function Footer() {
 
   return (
     <footer id="footer" ref={root} className="bg-tea text-cream">
-      <div className="px-5 pt-20 pb-32 md:px-12 md:pt-28 md:pb-16">
+      <div className="relative overflow-hidden px-5 pt-24 pb-32 md:px-12 md:pt-36 md:pb-16">
+        <div className="footer-orbit pointer-events-none absolute -right-24 -top-24 size-96 rounded-full border border-cream/10 md:size-[34rem]" aria-hidden />
+        <div className="footer-orbit pointer-events-none absolute -right-8 -top-8 size-64 rounded-full border border-cream/10 md:size-[24rem]" aria-hidden />
+        <p data-reveal className="mb-8 text-[0.65rem] tracking-[0.24em] text-ember uppercase">04 · Until next time</p>
         <p
           data-reveal
-          className="font-display text-[clamp(3.25rem,8vw,7.5rem)] leading-none font-light tracking-tight"
+          className="relative z-10 max-w-5xl font-display text-[clamp(4rem,11vw,11rem)] leading-[0.82] font-light tracking-[-0.05em]"
         >
-          {site.name}
+          Take the<br /><span className="text-cream/55">long way</span> here.
         </p>
+        <div className="relative z-10 mt-12 flex flex-wrap items-center gap-4 border-b border-cream/20 pb-16">
+          <a href="#visit" className="inline-flex min-h-12 items-center rounded-full bg-cream px-6 text-sm tracking-[0.08em] text-tea transition-transform duration-500 hover:-translate-y-1">Plan your visit ↗</a>
+          <span className="text-sm tracking-[0.04em] text-cream/55">Wood-fired · estate-grown · unhurried</span>
+        </div>
 
-        <div className="mt-16 grid gap-12 border-t border-cream/20 pt-10 md:grid-cols-12 md:gap-8">
+        <div className="relative z-10 mt-16 grid gap-12 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-4">
             <p data-reveal className="max-w-xs font-display text-[clamp(1.6rem,2vw,2rem)] leading-snug font-light">
               {site.footer.line}

@@ -58,6 +58,11 @@ export function Estate() {
         aria-hidden
       />
       <div className="absolute inset-0 bg-char/40" />
+      <div className="estate-glow pointer-events-none absolute -right-24 top-1/4 size-80 rounded-full bg-ember/20 blur-3xl md:size-[32rem]" aria-hidden />
+      <div className="absolute inset-x-5 top-28 z-10 flex items-start justify-between text-cream/75 md:inset-x-12">
+        <span className="font-display text-5xl font-light md:text-7xl">02</span>
+        <span className="max-w-[9rem] text-right text-[0.65rem] leading-relaxed tracking-[0.18em] uppercase">Tea rows below<br />Mist above</span>
+      </div>
       <div className="relative z-10 mx-auto flex min-h-svh max-w-5xl flex-col justify-center px-5 pt-28 pb-36 md:py-36 md:pr-16 md:pl-12">
         <p data-reveal className="text-xs tracking-[0.22em] text-cream/80 uppercase">
           {estate.eyebrow}
@@ -68,8 +73,9 @@ export function Estate() {
         >
           {estate.title}
         </h2>
+        <div data-reveal className="mt-8 h-px w-24 bg-ember" />
         <Prose paragraphs={estate.body} />
-        <ul className="mt-14 max-w-md md:ml-14">
+        <ul className="mt-14 max-w-md md:ml-14 md:mt-20">
           {estate.points.map((point, index) => (
             <li
               data-reveal

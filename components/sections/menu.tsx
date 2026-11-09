@@ -88,10 +88,14 @@ export function Menu() {
 
   return (
     <section id="menu" ref={root} className="bg-char text-cream md:h-svh md:overflow-hidden">
-      <div className="md:flex md:h-svh">
-        <header className="flex max-w-md shrink-0 flex-col justify-center px-5 py-24 md:w-[28rem] md:px-0 md:py-0 md:pl-12 md:pr-10">
-          <p data-reveal className="text-xs tracking-[0.22em] text-cream/70 uppercase">
-            Menu
+      <div className="relative md:flex md:h-svh">
+        <div className="pointer-events-none absolute inset-x-5 top-7 z-20 flex items-center justify-between text-cream/45 md:inset-x-12">
+          <span className="font-display text-5xl font-light md:text-7xl">03</span>
+          <span className="text-[0.65rem] tracking-[0.2em] uppercase">The oven decides</span>
+        </div>
+        <header className="flex max-w-md shrink-0 flex-col justify-center px-5 py-32 md:w-[28rem] md:px-0 md:py-0 md:pl-12 md:pr-10">
+          <p data-reveal className="flex items-center gap-3 text-xs tracking-[0.22em] text-ember uppercase">
+            <span className="size-1.5 rounded-full bg-ember" aria-hidden /> Menu
           </p>
           <h2
             data-reveal
@@ -99,6 +103,9 @@ export function Menu() {
           >
             {site.menuNote}
           </h2>
+          <p data-reveal className="mt-10 text-[0.68rem] leading-relaxed tracking-[0.18em] text-cream/45 uppercase">
+            Scroll to move through the kitchen
+          </p>
         </header>
         <div className="min-w-0 md:flex-1 md:overflow-hidden">
           <div data-track className="flex flex-col md:h-svh md:w-max md:flex-row">
@@ -106,7 +113,7 @@ export function Menu() {
           <article
             key={item.name}
             data-card
-            className="relative h-[82vh] w-full shrink-0 overflow-hidden md:h-svh md:w-[68vw]"
+            className="group relative h-[82vh] w-full shrink-0 overflow-hidden md:h-svh md:w-[68vw]"
           >
             <div data-plate className="absolute -inset-[8%]">
               <Image
@@ -119,6 +126,7 @@ export function Menu() {
               />
             </div>
             <div className="absolute inset-0 bg-linear-to-t from-char/70 via-transparent to-transparent" />
+            <div className="menu-card-glow pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
             <p
               className="pointer-events-none absolute top-24 right-6 font-display text-[clamp(4rem,8vw,7rem)] leading-none font-light text-cream/30 md:top-28 md:right-12"
               aria-hidden

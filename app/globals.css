@@ -60,6 +60,42 @@ body::before {
   box-shadow: 0 12px 34px rgb(26 23 20 / 0.18);
 }
 
+.story-sun {
+  animation: breathe 7s ease-in-out infinite;
+}
+
+.story-stat {
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1), background-color 500ms ease;
+}
+
+.story-stat:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  background-color: rgb(255 255 255 / 0.42);
+}
+
+.estate-glow {
+  animation: breathe 8s ease-in-out infinite reverse;
+}
+
+.menu-card-glow {
+  background: radial-gradient(circle at 70% 42%, rgb(217 98 43 / 0.28), transparent 42%);
+  mix-blend-mode: screen;
+}
+
+.footer-orbit {
+  animation: orbit 24s linear infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(0.94); opacity: 0.55; }
+  50% { transform: scale(1.08); opacity: 0.95; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
 @keyframes grain-drift {
   0% { transform: translate3d(0, 0, 0); }
   25% { transform: translate3d(-1%, 1%, 0); }
@@ -185,6 +221,16 @@ html[data-visited] .loader-mark {
 @media (prefers-reduced-motion: reduce) {
   body::before {
     animation: none;
+  }
+
+  .story-sun,
+  .estate-glow,
+  .footer-orbit {
+    animation: none;
+  }
+
+  .story-stat {
+    transition: none;
   }
 
   .marquee-track {
