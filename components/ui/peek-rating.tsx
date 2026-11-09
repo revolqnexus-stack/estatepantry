@@ -133,16 +133,21 @@ export default function PeekRating({
     }
   };
   useLayoutEffect(paint);
+  const paintRef = useRef(paint);
+  useEffect(() => {
+    paintRef.current = paint;
+  });
 
-  const setHover = (index: number | null) => {
-    if (index === st.current.hover) return;
-    st.current.hover = index;
-    if (index !== null) st.current.settled = false;
-    paint();
-    onPreview?.(index === null ? null : index + 1);
-  };
-  const setHoverRef = useRef(setHover);
-  setHoverRef.current = setHover;
+  const setHoverRef = useRef<(index: number | null) => void>(() => undefined);
+  useEffect(() => {
+    setHoverRef.current = (index: number | null) => {
+      if (index === st.current.hover) return;
+      st.current.hover = index;
+      if (index !== null) st.current.settled = false;
+      paintRef.current();
+      onPreview?.(index === null ? null : index + 1);
+    };
+  }, [onPreview]);
 
   const measure = () => {
     const row = rowRef.current;
@@ -195,7 +200,7 @@ export default function PeekRating({
     st.current.pointerId = event.pointerId;
     st.current.pressing = true;
     measure();
-    setHover(indexAt(event.clientX, event.clientY));
+    setHoverRef.current(indexAt(event.clientX, event.clientY));
   };
 
   const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
@@ -204,7 +209,7 @@ export default function PeekRating({
     if (event.pointerType !== "mouse" && !pressing) return;
     if (pressing && event.pointerId !== pointerId) return;
     if (!pressing && !st.current.rect) measure();
-    setHover(indexAt(event.clientX, event.clientY));
+    setHoverRef.current(indexAt(event.clientX, event.clientY));
   };
 
   const endPress = (event: PointerEvent<HTMLDivElement>) => {
@@ -216,11 +221,11 @@ export default function PeekRating({
       const next = hover + 1;
       commit(allowClear && next === value ? 0 : next);
     }
-    if (event.pointerType !== "mouse") setHover(null);
+    if (event.pointerType !== "mouse") setHoverRef.current(null);
   };
 
   const handlePointerLeave = () => {
-    if (!st.current.pressing) setHover(null);
+    if (!st.current.pressing) setHoverRef.current(null);
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {

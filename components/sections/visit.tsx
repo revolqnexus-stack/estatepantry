@@ -51,6 +51,18 @@ export function Visit() {
           >
             {site.address}
           </p>
+          <div data-reveal className="mt-10 grid max-w-xl grid-cols-3 gap-3 border-y border-tea/15 py-5">
+            {[
+              ["01", "Tea estate views"],
+              ["02", "Wood-fired kitchen"],
+              ["03", "Pet friendly"],
+            ].map(([number, label]) => (
+              <div key={number}>
+                <p className="font-display text-2xl font-light text-ember">{number}</p>
+                <p className="mt-2 text-[0.68rem] leading-relaxed tracking-[0.14em] uppercase">{label}</p>
+              </div>
+            ))}
+          </div>
           {hours ? (
             <p data-reveal className="mt-5 max-w-sm text-[1.02rem] leading-[1.8] tracking-[0.012em]">
               {hours}

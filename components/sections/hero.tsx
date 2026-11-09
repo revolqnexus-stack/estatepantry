@@ -146,6 +146,7 @@ export function Hero({ seen = false }: { seen?: boolean }) {
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-char/55 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[52%] bg-linear-to-t from-char/72 via-char/22 to-transparent" />
+      <div className="hero-vignette pointer-events-none absolute inset-0" aria-hidden />
 
       <header
         className={`glass-nav fixed inset-x-3 top-3 z-40 flex items-center justify-between gap-3 rounded-full px-4 py-2 transition-colors duration-500 md:inset-x-6 md:px-6 ${
@@ -188,7 +189,7 @@ export function Hero({ seen = false }: { seen?: boolean }) {
               className="mb-6 flex items-center gap-3 text-[0.7rem] tracking-[0.22em] text-cream uppercase"
             >
               <span className="ember-dot size-1.5 rounded-full bg-ember" aria-hidden />
-              Now open
+              Pullikanam Tea Estate · Vagamon
             </p>
             <h1 className="font-display text-[clamp(3.5rem,11vw,8.5rem)] leading-[0.92] font-light tracking-tight text-cream">
               {words.map((word) => (
@@ -205,6 +206,23 @@ export function Hero({ seen = false }: { seen?: boolean }) {
             >
               {taglineRest}
             </p>
+            <div data-reveal className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#menu"
+                className="hero-cta group inline-flex min-h-12 items-center gap-4 rounded-full bg-cream px-5 text-sm font-medium tracking-[0.08em] text-tea transition-transform duration-500 hover:-translate-y-1"
+              >
+                Explore the menu
+                <span className="text-ember transition-transform duration-500 group-hover:translate-x-1" aria-hidden>
+                  ↗
+                </span>
+              </a>
+              <a
+                href="#visit"
+                className="inline-flex min-h-12 items-center rounded-full border border-cream/55 px-5 text-sm tracking-[0.08em] text-cream transition-colors duration-500 hover:border-cream hover:bg-cream/10"
+              >
+                Plan your visit
+              </a>
+            </div>
           </div>
           <div className="mt-8 flex flex-col gap-8 md:mt-0 md:max-w-[16rem] md:items-end md:pb-2 md:text-right">
             <div data-reveal className="hidden flex-col items-center gap-3 md:flex">

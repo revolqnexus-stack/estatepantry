@@ -19,19 +19,25 @@ export function VisitActions({
 }) {
   const call = phoneHref();
   const whatsapp = whatsappHref();
+  const directions = mapsHref();
   const pill = tone === "ghost" ? ghostPill : solidPill;
+  const actions = [
+    { label: "WhatsApp", href: whatsapp, external: true },
+    { label: "Call", href: call, external: false },
+    { label: "Directions", href: directions, external: true },
+  ].filter((action): action is { label: string; href: string; external: boolean } => Boolean(action.href));
 
   return (
     <div className={`flex gap-2 ${className}`}>
-      <Action href={whatsapp} external className={`${pill} flex-1`}>
-        WhatsApp
-      </Action>
-      <Action href={call} className={`${pill} flex-1`}>
-        Call
-      </Action>
-      <Action href={mapsHref()} external className={`${pill} flex-1`}>
-        Directions
-      </Action>
+      {actions.length > 0 ? actions.map((action) => (
+        <Action key={action.label} href={action.href} external={action.external} className={`${pill} flex-1`}>
+          {action.label}
+        </Action>
+      )) : (
+        <a href="#visit" className={`${pill} flex-1`}>
+          Plan your visit
+        </a>
+      )}
     </div>
   );
 }

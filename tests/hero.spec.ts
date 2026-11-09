@@ -19,7 +19,7 @@ test("hero, loader, and sticky bar", async ({ page }, testInfo) => {
   const siteNav = page.getByRole("navigation", { name: "Site" });
   await expect(siteNav.getByRole("link", { name: "Menu" })).toBeVisible();
   await expect(siteNav.getByRole("link", { name: "Visit" })).toBeVisible();
-  await expect(page.getByText("Now open")).toBeVisible();
+  await expect(page.getByText("Pullikanam Tea Estate · Vagamon")).toBeVisible();
   await expect(
     page
       .getByText(
@@ -30,9 +30,7 @@ test("hero, loader, and sticky bar", async ({ page }, testInfo) => {
   await expect(page.getByRole("heading", { name: "Slow living" })).toBeVisible();
   const visitBar = page.getByRole("navigation", { name: "Visit" });
   await expect(visitBar).toBeVisible();
-  await expect(visitBar.getByRole("button", { name: "WhatsApp" })).toBeVisible();
-  await expect(visitBar.getByRole("button", { name: "Call" })).toBeVisible();
-  await expect(visitBar.getByRole("button", { name: "Directions" })).toBeVisible();
+  await expect(visitBar.getByRole("link", { name: "Plan your visit" })).toBeVisible();
 
   const mobile = testInfo.project.name === "mobile";
   const video = page.locator("#hero video:visible");
